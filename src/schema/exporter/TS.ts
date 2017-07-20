@@ -118,7 +118,7 @@ export class TS extends Exporter {
         (!type.literalList || !type.literalList.length)
       ) {
         return type.primitiveType.name;
-      } else return this.writeTypeRef(type, "");
+      } else return this.writeTypeRef(type, "_"); // "_" prefix to solve https://github.com/charto/cxsd/issues/20
     });
 
     if (outTypeList.length == 0) return null;
