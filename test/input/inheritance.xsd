@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="inheritance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:inh="inheritance">
+
+	<xs:complexType name="A">
+		<xs:annotation>
+			<xs:documentation>
+				Base type
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="aaa" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="B">
+		<xs:annotation>
+			<xs:documentation>
+				B extends A
+			</xs:documentation>
+		</xs:annotation>
+
+	  <xs:complexContent>
+	    <xs:extension base="A">
+				<xs:sequence>
+					<xs:element name="bbb" type="xs:string" />
+				</xs:sequence>
+	    </xs:extension>
+	  </xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="C">
+		<xs:annotation>
+			<xs:documentation>
+				C uses A
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="a" type="inh:A" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
