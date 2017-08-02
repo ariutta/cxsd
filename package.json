@@ -13,6 +13,7 @@
     "test:build:compile": "npm-run-all test:build:compile:*",
     "test:build:compile:GPML2013a": "cd test && node ../bin/cxsd https://cdn.rawgit.com/ariutta/GPML/9a8cb502c8745058c0611106f33a0f383819b3f0/GPML2013a.xsd && cd ..",
     "test:build:compile:dir-example": "cd test && node ../bin/cxsd ./input/dir-example.xsd && cd ..",
+    "test:build:compile:inheritance": "cd test && node ../bin/cxsd ./input/inheritance.xsd && tsc inheritance.ts && cd ..",
     "test:run": "jest"
   },
   "jest": {
