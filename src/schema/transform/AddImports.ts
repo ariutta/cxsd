@@ -17,6 +17,10 @@ export class AddImports extends Transform<AddImports, Output, void> {
       if (type) this.visitType(type);
     }
 
+    for (var member of this.namespace.memberList) {
+      if (member) this.visitMember(member);
+    }
+
     this.namespace.importContentTbl = this.output;
 
     return this.output;

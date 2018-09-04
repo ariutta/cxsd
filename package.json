@@ -6,7 +6,7 @@
     "cxsd": "bin/cxsd"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc --sourceMap -p tsconfig.json",
     "test": "npm-run-all test:*",
     "test:build": "npm-run-all test:build:*",
     "test:build:clean": "mkdir -p cache && rm -rf cache && cd test && mkdir -p cache && rm -rf cache && mkdir -p xmlns && rm -rf xmlns && cd ..",
